@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/iconfont.css"/>
+	</head>
+	<style type="text/css">
+		.home-div-top-r span {
+		    font-size: 20px;
+		    font-weight: normal;
+			line-height: 1;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		
+	
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav home-nav">
+		    <h1 class="mui-title">我的</h1>
+		</header> 
+		<div class="mui-content">
+			<div class="home-div-top">
+				<div class="home-div-top-l">
+					<img src="imgs/head.jpg" id="head_img" alt="" />
+				</div>
+				<div class="home-div-top-r" id="nick_name">
+					<span>登录/注册</span>
+					<span class="mui-icon mui-icon-arrowright right-icon"></span>
+					<p>登录后可享受更多特权</p>
+				</div>
+				
+			</div>
+			<div class="home-mony">
+				<div class="home-mony-l public_click" id="coin_back">
+					<span class="mui-icon iconfont icon-renminbi icon-div" style="background: #FD6A3C;"></span>
+					<h5 >我的余额</h5>
+				</div>
+				<div class="home-mony-r public_click" style="border-right:0px;" id="jifen_back">
+					<span class="mui-icon iconfont icon-hricon38 icon-div" style="background:#07C167"></span>
+					<h5 >我的积分</h5>
+				</div>
+			</div>
+			<div class="home-list">
+				<!--输入mlist按下回车键快速创建列表-->
+					<div class="home-list-div public-list-txt">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell" id="address_back">
+									   <span class="mui-icon iconfont icon-dizhi list-l-icon home-1"></span>
+									   <span >我的地址</span>
+								</li>
+								<li class="mui-table-view-cell" id="information_back">
+										<span class="mui-icon iconfont icon-shoucang01 list-l-icon home-2"></span>
+										<span >我的通知</span>
+								</li>
+								<li class="mui-table-view-cell" id="jifenshangcheng_back">
+										<span class="mui-icon iconfont icon-shangcheng list-l-icon home-4"></span>
+										<span >积分商城</span>
+								</li>
+							</ul>
+					</div>
+			</div>
+				
+			<div class="home-list-div public-list-txt">
+				    <ul class="mui-table-view">
+				        <li class="mui-table-view-cell" id="server_back">
+				               <span class="mui-icon iconfont icon-fuwuzhongxin list-l-icon home-5"></span>
+							   <span >服务中心</span>
+				        </li>
+				        <li class="mui-table-view-cell" id="shangjia_back">
+				               <span class="mui-icon iconfont icon-shangjiab list-l-icon home-6"></span>
+							   <span >我是商家</span>
+				        </li>
+				        <li class="mui-table-view-cell" id="set_back">
+				                <span class="mui-icon iconfont icon-xiangce list-l-icon home-3"></span>
+								<span >设置</span>
+				        </li>
+				    </ul>
+				</div>
+			
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript">
+				let loginUser = JSON.parse(localStorage.getItem('isLogin'))
+				if(loginUser){
+					document.getElementById('nick_name').innerText=loginUser.UserName
+				}
+		</script>	
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script src="js/back.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="css/mui.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <style type="text/css">
+		.body{
+			line-height: 11px;
+		}
+		.mui-bar-tab .mui-tab-item .mui-icon {
+		    height: 31px;
+		}
+		.imgicon {
+		  width: 1em;
+		  height: 1em;
+		  vertical-align: -0.15em;
+		}
+    </style>
+</head>
+<body class="body">
+	<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="shouye.html">
+			<span class="mui-icon"><img class="imgicon" src="imgs/iconfonthome0.png" ></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="find.html">
+			<span class="mui-icon "><img class="imgicon" src="imgs/chazhao.png" ></span>
+			<span class="mui-tab-label">查找</span>
+		</a>
+		<a class="mui-tab-item"  href="discover.html">
+			<span class="mui-icon"> <img class="imgicon" src="imgs/faxian.png" ></span>
+			<span class="mui-tab-label">发现</span>
+		</a>
+		<a class="mui-tab-item" href="me.html">
+			<span class="mui-icon "><img class="imgicon" src="imgs/lvsefenkaicankaoxianban-.png" ></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</nav>
+
+	<script src="js/mui.min.js">
+	</script>
+	<script type="text/javascript">
+		mui.init()
+	</script>
+	<script type="text/javascript" src="js/weather.js">
+	</script>
+	<script type="text/javascript">
+			var subPage=["shouye.html","find.html","discover.html","me.html"];
+			var subPageStyle={
+				top:'0px',
+				bottom:'50px'
+			}
+			
+			mui.plusReady(function(){
+				var self=plus.webview.currentWebview();
+				for(var i=0;i<subPage.length;i++)
+				{
+					var sub=plus.webview.create(subPage[i],subPage[i],subPageStyle);
+					sub.hide();
+					self.append(sub);
+				}
+				plus.webview.show(subPage[0]);
+		
+			})
+			mui(".mui-bar-tab").on("tap","a",function(e){
+				var tagPage = this.getAttribute('href');
+				plus.webview.show(tagPage,"fade-in",100);
+			})
+	</script>
+	
+</body>
+</html>
+

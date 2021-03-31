@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style type="text/css">
+		.oauth-area {
+		    position: absolute;
+		    bottom: 20px;
+		    left: 0px;
+		    text-align: center;
+		    width: 100%;
+		    padding: 0px;
+		    margin: 0px;
+		}
+		
+		.oauth-btn{
+		    display: inline-block;
+		    width: 50px;
+		    height: 50px;
+		    background-size: 30px 30px;
+		    background-position: center center;
+		    background-repeat: no-repeat;
+		    margin: 0px 20px;
+		    border: solid 1px #ddd;
+		    border-radius: 25px;
+			}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">登录</h1>
+		</header>
+		<div class="mui-content">
+			<form id="login-form" class="mui-input-group">
+				<div class="mui-input-row">
+					<label>账号</label>
+					<input id="account" type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id="password" type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell">
+						自动登录
+						<div id="autoLogin" class="mui-switch">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+			</form>
+			<div class="mui-content-padded">
+				<button id="login" class="mui-btn mui-btn-block" data-loading-text="请稍候">登录</button>
+				<div class="link-area">
+					<a href="reg.html" id="reg">注册账号</a> <span class="spliter">|</span>
+					<a id="forgetPassword">忘记密码</a>
+				</div>
+			</div>
+			<div class="mui-content-padded oauth-area" id="oauthArea">
+				<div class="oauth-btn" style="background-image: url(imgs/weixin.png);"></div>
+				<div class="oauth-btn" style="background-image: url(imgs/qq.png);"></div>
+				<div class="oauth-btn" style="background-image: url(imgs/sinaweibo.png);"></div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script  src="js/rcgl.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		
+		
+	</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="UTF-8">
+			mui.init();
+		</script>
+		<style type="text/css">
+			#map {
+				width: 100%;
+				position: fixed;
+				top: 45px;
+				bottom: 0px;
+				line-height: 200px;
+				text-align: center;
+				background: #FFFFFF;
+			}
+			
+			header span,
+			.mui-bar .mui-btn-link {
+				color: #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav">
+
+			<button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-left-nav"></span>返回</button>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" id="baidulink">百度地图</button>
+		</header>
+		<div class="mui-content" id="test">
+			<div id="map">地图加载中...</div>
+
+		</div>
+		<script>
+			var pcenter;
+			var map;
+			var cur;
+			var currentlat;
+			var currentlng;
+			window.onload = function() {
+
+				mui.plusReady(function() {
+					//得到当前的GPS位置
+					plus.geolocation.getCurrentPosition(function(p) {
+						currentlat = p.coords.latitude;
+						currentlng = p.coords.longitude;
+					}, function(e) {
+						console.log(e.message);
+					}, {
+						provider: 'baidu'
+					});
+					cur = plus.webview.currentWebview();
+					pcenter = new plus.maps.Point(cur.lng, cur.lat);
+					setTimeout(function() {
+						map = new plus.maps.Map("map");
+						map.centerAndZoom(pcenter, 17);
+						createMarker();
+					}, 300);
+					plus.nativeUI.closeWaiting();
+					cur.show();
+					//打开百度地图
+					document.getElementById('baidulink').addEventListener('tap', function() {
+						var dst = new plus.maps.Point(cur.lng, cur.lat);
+						var src = new plus.maps.Point(currentlng, currentlng);
+						plus.maps.openSysMap(dst, cur.address, src);
+					})
+				});
+			}
+
+			function createMarker() {
+				//生成地图上的标点对象
+				var marker = new plus.maps.Marker(new plus.maps.Point(cur.lng, cur.lat));
+				//标点图标
+				marker.setIcon("imgs/map.jpg");
+				//标点文字即地址
+				marker.setLabel(cur.address);
+//				if(cur.lat == "30.895912" && cur.lng == "103.601591") {
+//					cur.phone = "替代数据(没有经纬度）"
+//				}
+                //生成气泡对象
+				var bubble = new plus.maps.Bubble(cur.phone);
+				marker.setBubble(bubble);
+				//向地图中添加标点
+				map.addOverlay(marker);
+			}
+		</script>
+	</body>
+
+</html>

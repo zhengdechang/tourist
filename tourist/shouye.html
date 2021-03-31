@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+	</head>
+	<style type="text/css">
+		.body{
+			line-height: 11px;
+		}
+		
+		.mui-bar-nav{
+			background-color: darkmagenta ;
+		}
+		.mui-slider{
+			height: 160px;
+		}
+		.mui-slider img {
+			width: 100%;
+			height: 160px;
+		}
+		
+		.mui-col-xs-4 {
+		    width: 25%;
+		}
+		
+		
+		
+		.brid-slide{
+			border: 2px solid #0062CC;
+			background-color: #0062CC;
+			width: 100%;
+			height: 30px;
+		}
+		.brid-slide-h{
+			font-size: 15px;
+			text-align: center;
+		}
+		
+		.mui-table-view-cell{
+			    margin: 0;
+			    padding: 11px 15px;
+			    vertical-align: top;
+			    border-right: 1px solid cornsilk !important;
+			    border-bottom: 1px solid cornsilk !important;
+		}
+		.mui-grid-view.mui-grid-9 {
+			    background-color: cornsilk;
+		}
+		.imgicon {
+		  margin-top:9px ;
+		  width: 1em;
+		  height: 1em;
+		  vertical-align: -0.15em;
+		}
+		.bg{
+		  width: 60px;
+		  height: 60px;
+		  background-color: yellow;
+		  border-radius: 100%;
+		}
+	</style>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<img src="imgs/dingwei.png" height="20px" border="15px" align="left" >
+			<h5 style="color: darkgoldenrod;" id="dingwei_back">广州市</h5>
+			<span id="box" class="mui-box" style="font-size:10pt; color: darkgoldenrod;"></span>
+			<form action="" method="" style="float: right;    font-size: 16px;  margin-top:-1.50em">
+				<div class="mui-input-row mui-search">
+					<input type="search" class="mui-input-clear" placeholder="请输入关键词" >
+				</div>
+			</form>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider" >
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="imgs/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="imgs/shuijiao.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="imgs/cbd.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="imgs/muwu.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="imgs/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="imgs/shuijiao.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+		</div>
+		<div class="brid">
+		        <ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="ruzhushangjia_back">
+							<span class="mui-icon icon-bg">
+								<div class="bg">
+								<img class="imgicon" src="imgs/shangjia.png" ></div></span>
+		                    <div class="mui-media-body" >入住商家</div></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="lvyou_back">
+		                    <span class="mui-icon">
+								<div class="bg">
+									<img class="imgicon" src="./imgs/lvyou.png" ></div></span>
+		                    <div class="mui-media-body" >旅游</div></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="huochepiao_back">
+		                    <span class="mui-icon">
+								<div class="bg">
+								<img class="imgicon" src="imgs/huochepiao.png" ></div></span>
+		                    <div class="mui-media-body" >火车票</div></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="jiudian_back">
+		                    <span class="mui-icon ">
+								<div class="bg">
+								<img class="imgicon" src="imgs/jiudian.png" ></div></span>
+		                    <div class="mui-media-body" >酒店</div></li>
+				    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="meishi_back"><a href="#">
+				            <span class="mui-icon ">
+								<div class="bg">
+								<img class="imgicon" src="imgs/meishi.png" ></div></span>
+				            <div class="mui-media-body" >美食</div></a></li>
+				    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="youlunyou_back"><a href="#">
+				            <span class="mui-icon ">
+								<div class="bg">
+								<img class="imgicon" src="imgs/youlun.png" ></div></span>
+				            <div class="mui-media-body" >邮轮游</div></a></li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="jipiao_back"><a href="#">
+							<span class="mui-icon ">
+								<div class="bg">
+								<img class="imgicon" src="imgs/jipiao.png" ></div></span>
+							<div class="mui-media-body" >机票</div></a></li>
+				    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" id="dingzhiyou_back"><a href="#">
+				            <span class="mui-icon ">
+								<div class="bg">
+								<img class="imgicon" src="imgs/dingzhiyou.png" ></div></span>
+				            <div class="mui-media-body" >定制游</div></a></li>
+				   
+				</ul> 
+		</div>
+		<div class="brid-slide">
+				<h4 class="brid-slide-h">旅游景点</h4>
+		</div>
+		<div class="slide-table" style="background-color:darkgray !important;">
+		    <ul class="mui-table-view mui-grid-view">
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="imgs/cbd.jpg">
+		                <div class="mui-media-body" >幸福就是可以一起睡觉</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="imgs/yuantiao.jpg">
+		                <div class="mui-media-body">想要一间这样的木屋，静静的喝咖啡</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#"><img class="mui-media-object" src="imgs/yuantiao.jpg">
+		                <div class="mui-media-body">Color of SIP CBD</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="imgs/shuijiao.jpg">
+		                <div class="mui-media-body">静静看这世界</div></a></li>
+		    </ul>    
+		</div>
+		<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/weather.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/mui.min.js"></script>
+		<script src="./js/mui.js"></script>	
+		<script src="js/acc.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var slider = mui("#slider");
+			slider.slider
+			({
+					interval:3000
+			});
+			dingwei_back.addEventListener('tap', function() {
+									// mui.fire(main, "menu:swipeleft");
+									mui.openWindow({
+										id: "dingwei.html",
+										url: "dingwei.html"
+									});
+							});
+			ruzhushangjia_back.addEventListener('tap', function() {
+									// mui.fire(main, "menu:swipeleft");
+									mui.openWindow({
+										id: "ruzhushangjia.html",
+										url: "ruzhushangjia.html"
+									});
+							});
+			lvyou_back.addEventListener('tap', function() {
+									// mui.fire(main, "menu:swipeleft");
+									mui.openWindow({
+										id: "lvyou.html",
+										url: "lvyou.html"
+									});
+							});	
+			huochepiao_back.addEventListener('tap', function() {
+									// mui.fire(main, "menu:swipeleft");
+									mui.openWindow({
+										id: "huochepiao.html",
+										url: "huochepiao.html"
+									});
+							});							
+			jiudian_back.addEventListener('tap', function() {
+									// mui.fire(main, "menu:swipeleft");
+									mui.openWindow({
+										id: "jiudian.html",
+										url: "jiudian.html"
+									});
+							});							
+			meishi_back.addEventListener('tap', function() {
+									// mui.fire(main, "menu:swipeleft");
+									mui.openWindow({
+										id: "meishi.html",
+										url: "meishi.html"
+									});
+							});							
+			youlunyou_back.addEventListener('tap', function() {
+									// mui.fire(main, "menu:swipeleft");
+									mui.openWindow({
+										id: "youlunyou.html",
+										url:"youlunyou.html"
+									});
+							});							
+			jipiao_back.addEventListener('tap', function() {
+									// mui.fire(main, "menu:swipeleft");
+									mui.openWindow({
+										id: "jipiao.html",
+										url: "jipiao.html"
+									});
+							});							
+			dingzhiyou_back.addEventListener('tap', function() {
+									// mui.fire(main, "menu:swipeleft");
+									mui.openWindow({
+										id: "dingzhiyou.html",
+										url: "dingzhiyou.html"
+									});
+							});							
+									
+			var api_url={};
+			//通过经纬度获取所在城市api
+			api_url.getCityUrl="http://www.meishihui68.com.cn/api/geo?latitude={0}&longitude={1}";
+			var dingwei = document.getElementById("dingwei_back")
+			if(window.plus){
+				plus.geolocation.getCurrentPosition(function(p) {
+					var url = api_url.getCityUrl.format(p.coords.latitude, p.coords.longitude);
+					console.log(url);
+					mui.ajax(url, {
+						type: "GET",
+						cache: "false",
+						dataType: "json",
+						success: function(data) {
+							if(data){
+								dingwei.innerText = data.city;
+							}
+							
+						},
+						error: function(xhr, type, errorThrown) {
+							console.log(type);
+						}
+					});
+				}, function(e) {
+					console.log("Geolocation error: " + e.message);
+				});
+			}	
+		</script>
+			
+	</body>
+
+</html>
